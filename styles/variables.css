@@ -1,0 +1,15 @@
+:root {
+  --deep-blue: rgba(41, 126, 226, 1);
+
+  /* button */
+  --bg-button-primary: #41A4DF;
+  --bg-button-primary__hover: #297EE2;
+
+  --bg-button-secondary: rgba(41, 126, 226, 0.12);
+  --bg-button-secondary__hover: rgba(65, 164, 223, 0.16);
+
+  --border-button-dark: rgba(255, 255, 255, .6);
+  --border-button-dark__hover: rgba(255, 255, 255, 1);
+
+  /* link */
+}
