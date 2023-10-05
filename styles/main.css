@@ -57,7 +57,7 @@
 header {
   position: relative;
   display: flex;
-  margin: 40px auto;
+  margin: 40px auto 0;
   max-width: 1200px;
 
   .logo {
@@ -98,11 +98,50 @@ header {
 main {
   .hero-block {
     position: relative;
+    display: flex;
+    align-items: center;
     margin: 20px auto;
     max-width: 1200px;
 
     .description {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      color: var(--text-dark);
 
+      & p {
+        width: 100%;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+      }
+
+      & > h1.title {
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 629;
+        line-height: 88px;
+        letter-spacing: -2.4px;
+
+        & > span {
+          color: var(--text-blue);
+        }
+      }
+
+      & > .bots {
+        width: 100%;
+        margin-top: 24px;
+
+        & > .images {
+          margin-left: 36px;
+          margin-bottom: 16px;
+
+          & > img {
+            margin-left: -36px;
+          }
+        }
+      }
     }
 
     .phone {
