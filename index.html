@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./styles/variables.css">
   <link rel="stylesheet" href="./styles/components/button.css">
   <link rel="stylesheet" href="./styles/components/link.css">
+  <link rel="stylesheet" href="./styles/components/slider.css">
   <title>Crypto Pay</title>
 </head>
 <body>
@@ -21,8 +22,8 @@
     </div>
     <nav class="bullets">
       <ul>
-        <li><a href="#">Use cases</a></li>
-        <li><a href="#">Features</a></li>
+        <li><a href="#heroBlock">Use cases</a></li>
+        <li><a href="#useCases">Features</a></li>
         <li><a href="#">How to start</a></li>
       </ul>
     </nav>
@@ -34,7 +35,7 @@
     </div>
   </header>
   <main>
-    <div class="hero-block">
+    <div id="heroBlock" class="hero-block">
       <div class="description">
         <h1 class="title">Crypto payments for <span>telegram bots</span></h1>
         <p>Seamlessly accept crypto payments <br/> in your Telegram bots and services.</p>
@@ -54,9 +55,60 @@
         <img src="./assets/hero-block/phone.png" alt="Telegram Crypto Bot">
       </div>
     </div>
+    <div id="useCases" class="use-cases">
+      <div class="container">
+        <div id="carousel">
+          <div class="items">
+            <div id="case1" class="item">
+              <div class="image">
+                <img src="./assets/use-cases/case-0.png" alt="">
+              </div>
+              <div class="description">
+                <h2><span>Instant<br/>Auto Sales:</span><br/>Boost conversion</h2>
+                <p>Immediately deliver digital products<br/>and services to your users.</p>
+                <button class="button primary">Open API Docs</button>
+              </div>
+            </div>
+            <div id="case2" class="item">
+              <div class="image">
+                <img src="./assets/use-cases/case-1.png" alt="">
+              </div>
+              <div class="description">
+                <h2><span>Channels integration:</span><br/>Seamless access</h2>
+                <p>Automatically unlock exclusive content<br/>to your users.</p>
+                <button class="button primary">Open API Docs</button>
+              </div>
+            </div>
+            <div id="case3" class="item">
+              <div class="image">
+                <img src="./assets/use-cases/case-2.png" alt="">
+              </div>
+              <div class="description">
+                <h2><span>Endless customization:</span><br/>with Webhooks</h2>
+                <p>Receive successful payment notifications in<br/>real-time. Integrate to any scenario of your service.</p>
+                <button class="button primary">Open API Docs</button>
+              </div>
+            </div>
+          </div>
+          <div id="paginator" class="slider">
+            <form id="#form">
+              <span id="slideTextCurrent">01</span>
+              <input id="slide1" type="radio" name="slide" value="0" checked />
+              <label for="slide1"></label>
+              <input id="slide2" type="radio" name="slide" value="1" />
+              <label for="slide2"></label>
+              <input id="slide3" type="radio" name="slide" value="2" />
+              <label for="slide3"></label>
+              <span id="slideTextTotal"></span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
     footer
   </footer>
+  <script src="./scripts/slider.js"></script>
 </body>
 </html>
