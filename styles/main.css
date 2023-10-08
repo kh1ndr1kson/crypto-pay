@@ -211,7 +211,7 @@ main {
   .features {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1.5fr);
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
       "currency currency currency currency currency"
@@ -242,7 +242,7 @@ main {
       & p {
         font-size: 20px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         line-height: 120%;
         color: var(--deep-darkgray);
       }
@@ -318,8 +318,111 @@ main {
       }
     }
 
-    & > .stat         { grid-area: stat }
-    & > .exchange     { grid-area: exchange }
+    & > .stat {
+      grid-area: stat;
+
+      & .message {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        max-height: 555px;
+        border-radius: 24px;
+        background-image: url(../assets/features/stat/bg.png);
+        margin-bottom: 24px;
+      }
+    }
+
+    & > .exchange {
+      grid-area: exchange;
+
+      & .swap {
+        position: relative;
+        margin: 0 45px 16px 45px;
+        height: 106px;
+
+        #svgBtcIcon {
+          fill: transparent;
+        }
+
+        & > svg,
+        & > img {
+          position: absolute;
+        }
+
+        & #svgUsdt {
+          z-index: 1;
+          left: 0;
+
+          & #svgUsdtTextUp,
+          & #svgUsdtTextDown {
+            fill: none;
+            transition: fill .25s;
+          }
+        }
+
+        & #svgBtc {
+          z-index: 2;
+          left: 34px;
+
+          & #svgBtcText {
+            fill: none;
+            transition: fill .25s;
+          }
+        }
+
+        & #svgTon {
+          z-index: 3;
+          left: 68px;
+
+          & #svgTonText {
+            transition: fill .25s;
+          }
+        }
+
+        & #svgDollar {
+          z-index: 4;
+          top: -4px;
+          right: -18px;
+        }
+
+        & #svgBtn {
+          z-index: 5;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 72px;
+        }
+      }
+
+      &:hover {
+        & #svgUsdt {
+          animation: exUsdt 2s ease-in-out infinite;
+
+          & #svgUsdtTextUp,
+          & #svgUsdtTextDown {
+            animation: exUsdtText 2s ease-in-out infinite;
+          }
+        }
+
+        & #svgBtc {
+          animation: exBtc 2s ease-in-out infinite;
+
+          & #svgBtcText {
+            animation: exBtcText 2s ease-in-out infinite;
+          }
+        }
+
+        & #svgTon {
+          animation: exTon 2s ease-in-out infinite;
+
+          & #svgTonText {
+            animation: exTonText 2s ease-in-out infinite;
+          }
+        }
+      }
+    }
     & > .verification { grid-area: verification }
     & > .anonymous    { grid-area: anonymous }
   }
@@ -361,4 +464,55 @@ main {
     transform: scale(1);
     background: unset;
   }
+}
+
+@keyframes exUsdt {
+  16.666% { left: 34px; z-index: 3; }
+  33.333% { left: 34px; z-index: 3; }
+  49.999% { left: 68px; z-index: 4; }
+  66.666% { left: 68px; z-index: 4; }
+  83.333% { left: 0; z-index: 1; }
+  100% { left: 0; z-index: 1; }
+}
+@keyframes exUsdtText {
+  16.666% { fill: none }
+  33.333% { fill: none }
+  49.999% { fill: #FFFFFF }
+  66.666% { fill: #FFFFFF }
+  83.333% { fill: none }
+  100% { fill: none }
+}
+
+@keyframes exBtc {
+  16.666% { left: 68px; z-index: 4; }
+  33.333% { left: 68px; z-index: 4; }
+  49.999% { left: 0; z-index: 1; }
+  66.666% { left: 0; z-index: 1; }
+  83.333% { left: 34px; z-index: 3; }
+  100% { left: 34px; z-index: 3; }
+}
+@keyframes exBtcText {
+  16.666% { fill: #FFFFFF }
+  33.333% { fill: #FFFFFF }
+  49.999% { fill: none }
+  66.666% { fill: none }
+  83.333% { fill: none }
+  100% { fill: none }
+}
+
+@keyframes exTon {
+  16.666% { left: 0; z-index: 1; }
+  33.333% { left: 0; z-index: 1; }
+  49.999% { left: 34px; z-index: 3; }
+  66.666% { left: 34px; z-index: 3; }
+  83.333% { left: 68px; z-index: 4; }
+  100% { left: 68px; z-index: 4; }
+}
+@keyframes exTonText {
+  16.666% { fill: none }
+  33.333% { fill: none }
+  49.999% { fill: none }
+  66.666% { fill: none }
+  83.333% { fill: #FFFFFF }
+  100% { fill: #FFFFFF }
 }
