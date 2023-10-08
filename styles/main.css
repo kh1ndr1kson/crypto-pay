@@ -223,13 +223,6 @@ main {
     padding: 44px 0;
     max-width: 1200px;
 
-    & > .currency     { grid-area: currency }
-    & > .commission   { grid-area: commission }
-    & > .stat         { grid-area: stat }
-    & > .exchange     { grid-area: exchange }
-    & > .verification { grid-area: verification }
-    & > .anonymous    { grid-area: anonymous }
-
     & .card {
       position: relative;
       padding: 42px 56px;
@@ -253,6 +246,10 @@ main {
         line-height: 120%;
         color: var(--deep-darkgray);
       }
+    }
+
+    & > .currency {
+      grid-area: currency;
 
       & .coins {
         position: relative;
@@ -284,5 +281,84 @@ main {
         }
       }
     }
+
+    & > .commission {
+      grid-area: commission;
+
+      & .button-click {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-top: 37px;
+        margin-bottom: 53px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -70%;
+          right: 15px;
+          background: url(../assets/features/commission/cursor.svg) no-repeat;
+          width: 45.802px;
+          height: 48.738px;
+          transition: .5s;
+          z-index: 1;
+        }
+      }
+
+      & .button-click > img {
+        border-radius: 17px;
+      }
+
+      &:hover .button-click::before {
+        animation: cursor 2s ease-in-out infinite;
+      }
+
+      &:hover .button-click > img {
+        animation: button 2s ease-in-out infinite;
+      }
+    }
+
+    & > .stat         { grid-area: stat }
+    & > .exchange     { grid-area: exchange }
+    & > .verification { grid-area: verification }
+    & > .anonymous    { grid-area: anonymous }
+  }
+}
+
+/* keyframes */
+@keyframes cursor {
+  25% {
+    bottom: -40%;
+    right: 50px;
+  }
+  65% {
+    bottom: -40%;
+    right: 50px;
+  }
+  90% {
+    bottom: -70%;
+    right: 15px;
+  }
+}
+
+@keyframes button {
+  25% {
+    transform: scale(1);
+    background: unset;
+  }
+  40% {
+    transform: scale(1.1);
+    background: rgba(217, 228, 242, .5);
+  }
+  65% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1);
+    background: unset;
+  }
+  100% {
+    transform: scale(1);
+    background: unset;
   }
 }
