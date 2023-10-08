@@ -207,4 +207,82 @@ main {
       }
     }
   }
+
+  .features {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "currency currency currency currency currency"
+      "commission commission stat stat stat"
+      "exchange exchange stat stat stat"
+      "verification verification verification anonymous anonymous";
+    grid-gap: 20px;
+    margin: 0 auto;
+    padding: 44px 0;
+    max-width: 1200px;
+
+    & > .currency     { grid-area: currency }
+    & > .commission   { grid-area: commission }
+    & > .stat         { grid-area: stat }
+    & > .exchange     { grid-area: exchange }
+    & > .verification { grid-area: verification }
+    & > .anonymous    { grid-area: anonymous }
+
+    & .card {
+      position: relative;
+      padding: 42px 56px;
+      border-radius: 40px;
+      background: var(--bg-light);
+
+      & h3 {
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -1.26px;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+      }
+
+      & p {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        color: var(--deep-darkgray);
+      }
+
+      & .coins {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 42px;
+
+        & .coin {
+          & > img {
+            margin-bottom: 8px;
+            transition: .25s;
+          }
+
+          & > span {
+            display: block;
+            text-align: center;
+            width: 100%;
+            color: var(--deep-gray);
+            transition: .25s;
+          }
+
+          &:hover > img {
+            transform: scale(1.1);
+          }
+
+          &:hover > span {
+            color: var(--deep-darkgray);
+          }
+        }
+      }
+    }
+  }
 }

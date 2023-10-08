@@ -1,9 +1,12 @@
 :root {
   --deep-blue: rgba(41, 126, 226, 1);
+  --deep-darkgray: rgba(17, 17, 17, 0.8);
+  --deep-gray: rgba(17, 17, 17, 0.4);
   --text-light: #FFFFFF;
   --text-dark: #0D0D12;
   --text-blue: #41A4DF;
   --dark-blue: #232328;
+  --bg-light: #F7F9FB;
 
   /* button */
   --bg-button-primary: #41A4DF;
