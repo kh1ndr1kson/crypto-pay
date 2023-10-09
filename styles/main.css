@@ -107,6 +107,10 @@ header {
 
       & > li {
         list-style-type: none;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
       }
     }
   }
@@ -127,6 +131,7 @@ main {
   .hero-block {
     position: relative;
     display: flex;
+    gap: 76px;
     align-items: center;
     margin: 20px auto;
     max-width: 1200px;
@@ -169,6 +174,15 @@ main {
             margin-left: -36px;
           }
         }
+      }
+    }
+
+    & .phone {
+      & img {
+        width: 336px;
+        margin-top: 40px;
+        margin-right: 76px;
+        margin-bottom: 40px;
       }
     }
   }
