@@ -6,29 +6,29 @@ const currencyAnimation = document.getElementById('currencyContainer')
 function currencyCoinsAnimation() {
   if (isStartCurrency) return
 
-  const coinElements = document.querySelectorAll('.coin');
-  let index = 0;
+  const coinElements = document.querySelectorAll('.coin')
+  let index = 0
 
   const currencyInterval = setInterval(() => {
-    coinElements[index].classList.add('zoomed');
+    coinElements[index].classList.add('zoomed')
 
     setTimeout(() => {
-      coinElements[index].classList.remove('zoomed');
-      index++;
+      coinElements[index].classList.remove('zoomed')
+      index++
 
       if (index === coinElements.length) {
-        clearInterval(currencyInterval);
-        isStartCurrency = false;
+        clearInterval(currencyInterval)
+        isStartCurrency = false
       }
-    }, 175);
-  }, 350);
+    }, 175)
+  }, 350)
 
-  isStartCurrency = true;
+  isStartCurrency = true
 }
 
-let isStartCurrency = false;
+let isStartCurrency = false
 
-currencyAnimation.addEventListener('mouseenter', currencyCoinsAnimation);
+currencyAnimation.addEventListener('mouseenter', currencyCoinsAnimation)
 
 /*
  * Payment statistics
@@ -85,7 +85,7 @@ function statAnimation() {
     statAction[1].classList.remove('selected')
     statAction[2].classList.add('selected')
 
-  }, 1400);
+  }, 1400)
   setTimeout(() => {
     for (const [key, value] of Object.entries(data[0]))
       document.getElementById(key).innerText = value
@@ -94,7 +94,47 @@ function statAnimation() {
     statAction[0].classList.add('selected')
 
     isStartStat = false
-  }, 2300);
+  }, 2300)
 }
 
-statContainer.addEventListener('mouseenter', statAnimation);
+statContainer.addEventListener('mouseenter', statAnimation)
+
+/*
+ * Send coins to users
+ */
+const verificationContainer = document.querySelector('.verification')
+const verificationMessage = document.querySelectorAll('.message-content__v')
+let isStartVerification = false
+
+function verificationAnimation() {
+  if (isStartVerification) return
+
+  isStartVerification = true
+
+  verificationMessage[0].classList.add('layer')
+  verificationMessage[1].classList.remove('canceled')
+
+  setTimeout(() => {
+    verificationMessage[0].classList.add('canceled')
+    verificationMessage[0].classList.remove('layer')
+
+    verificationMessage[1].classList.add('layer')
+    verificationMessage[2].classList.remove('canceled')
+  }, 1000)
+
+  setTimeout(() => {
+    verificationMessage[2].classList.add('layer')
+    verificationMessage[0].classList.remove('canceled')
+
+    verificationMessage[1].classList.add('canceled')
+    verificationMessage[1].classList.remove('layer')
+  }, 2000)
+
+  setTimeout(() => {
+    verificationMessage[2].classList.remove('layer')
+    verificationMessage[2].classList.add('canceled')
+    isStartVerification = false
+  }, 3000)
+}
+
+verificationContainer.addEventListener('mouseenter', verificationAnimation)

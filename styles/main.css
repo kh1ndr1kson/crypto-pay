@@ -548,16 +548,107 @@ main {
     }
     & > .verification {
       grid-area: verification;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
 
       & .phone-down {
         position: relative;
+        width: 462px;
         height: 350px;
+        background-image: url(../assets/features/verification/phone-down.webp);
+        background-position: center;
+        background-size: cover;
+        align-self: center;
+        margin-bottom: 20px;
 
-        & > img {
+        & .message-content__v {
           position: absolute;
-          top: -42px;
-          left: 50%;
-          transform: translateX(-50%);
+          display: flex;
+          align-items: flex-start;
+          gap: 7px;
+          padding: 13px 19px 14px 15px;
+          left: 31.5px;
+          top: 75px;
+          width: 366px;
+          border-radius: 24px;
+          box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.02);
+          transition: transform .6s ease-in-out, scale .5s ease-in-out,
+          opacity .5s ease-in-out;
+          background: linear-gradient(
+              98deg,
+              #e8f2f9 15.04%,
+              #e8f2f9 52.22%,
+              #e9f1fa 90.93%
+          );
+          z-index: 2;
+
+          &::before {
+            content: 'now';
+            font-size: 12px;
+            position: absolute;
+            color: #a0a0a0;
+            top: 15px;
+            right: 15px;
+          }
+
+          & p {
+            font-family: 'SF-Pro', sans-serif;
+            font-size: 17.24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 110%;
+            letter-spacing: -0.517px;
+            width: 90%;
+
+            & > span {
+              font-size: 17.24px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 110%;
+              letter-spacing: -0.517px;
+            }
+
+            &:last-child {
+              margin-top: 14px;
+            }
+
+            & > img:first-child {
+              margin-right: 5px;
+            }
+
+            & > img:last-child {
+              margin-left: 5px;
+            }
+          }
+
+          & .message-text__v {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 4px;
+
+            & img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+
+        & .layer {
+          opacity: .4;
+          scale: .9;
+          transition: .9s;
+          transform: translateY(-20px);
+          z-index: 0;
+        }
+
+        & .canceled {
+          display: block;
+          opacity: 0;
+          transform: translateY(20px);
+          z-index: -1;
         }
       }
     }
