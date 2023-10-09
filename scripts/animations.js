@@ -104,6 +104,7 @@ statContainer.addEventListener('mouseenter', statAnimation)
  */
 const verificationContainer = document.querySelector('.verification')
 const verificationMessage = document.querySelectorAll('.message-content__v')
+
 let isStartVerification = false
 
 function verificationAnimation() {
@@ -138,3 +139,47 @@ function verificationAnimation() {
 }
 
 verificationContainer.addEventListener('mouseenter', verificationAnimation)
+
+/*
+ * Anonymous payments
+ */
+const anonymousContainer = document.querySelector('.anonymous');
+const anonymousMessage = document.querySelectorAll('.message-text__a');
+
+let isStartAnonymous = false;
+
+function anonymousAnimation() {
+  if (isStartAnonymous) {
+    return;
+  }
+
+  isStartAnonymous = true;
+
+  anonymousMessage[0].classList.add('layer');
+  anonymousMessage[1].classList.remove('canceled');
+
+  setTimeout(() => {
+    anonymousMessage[0].classList.add('canceled');
+    anonymousMessage[0].classList.remove('layer');
+
+    anonymousMessage[1].classList.add('layer');
+    anonymousMessage[2].classList.remove('canceled');
+  }, 1000);
+
+  setTimeout(() => {
+    anonymousMessage[2].classList.add('layer');
+    anonymousMessage[0].classList.remove('canceled');
+
+    anonymousMessage[1].classList.add('canceled');
+    anonymousMessage[1].classList.remove('layer');
+  }, 2000);
+
+  setTimeout(() => {
+    anonymousMessage[2].classList.add('canceled');
+    anonymousMessage[2].classList.remove('layer');
+
+    isStartAnonymous = false;
+  }, 3000);
+}
+
+anonymousContainer.addEventListener('mouseenter', anonymousAnimation);
