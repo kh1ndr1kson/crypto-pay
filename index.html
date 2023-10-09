@@ -112,7 +112,7 @@
 
     <!-- Features Block -->
     <div class="features">
-      <div class="card currency">
+      <div id="currencyContainer" class="card currency">
         <h3>Accept a wide range of cryptocurrencies</h3>
         <p>Bill any supported cryptocurrencies with asset parameter in
           <a href="#" class="link">GetInvoice</a>
@@ -163,9 +163,24 @@
           <a href="#" class="link">Crypto Pay</a> and tap Create App to get API Token
         </p>
       </div>
-      <div class="card stat">
-        <div class="message">
-          <img src="./assets/features/stat/message.svg" alt="">
+      <div id="statContainer" class="card stat">
+        <div class="bg-message">
+          <div class="message-content">
+            <p>Application Statistics <span>@GoodsBot</span> for <span id="statPeriod">all time:</span></p>
+            <p>Volume: <span id="statVolume">$204,920</span></p>
+            <p>The number of created invoices: <span id="statInvoices">16,256</span></p>
+            <p>Number of payments: <span id="statN2P">9,353</span></p>
+            <p>Number of users: <span id="statN2U">5,606</span></p>
+            <p>Conversion: <span id="statConversion">57%</span></p>
+          </div>
+          <div class="actions">
+            <div class="action selected">All Time</div>
+            <div class="action">Today</div>
+            <div class="action">Yesterday</div>
+            <div class="action">Week</div>
+            <div class="action action-full">Month</div>
+            <div class="action action-full">Back</div>
+          </div>
         </div>
         <h3>Payment statistics</h3>
         <p>Open
@@ -243,7 +258,11 @@
         <p>Request up to date currency rate with the <a href="#" class="link">getExchangeRates</a> API method</p>
       </div>
       <div class="card verification">
+        <div class="phone-down">
+          <img src="./assets/features/verification/phone-down.png" alt="">
+        </div>
         <h3>Send coins to users</h3>
+        <p>Automate payouts to users with <a href="#" class="link">transfer</a> API method</p>
       </div>
       <div class="card anonymous">
         <h3>Anonymous payments</h3>
@@ -255,5 +274,6 @@
   </footer>
   <script src="./scripts/main.js"></script>
   <script src="./scripts/slider.js"></script>
+  <script src="./scripts/animations.js"></script>
 </body>
 </html>
