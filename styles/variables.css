@@ -18,5 +18,8 @@
   --border-button-dark: rgba(255, 255, 255, .6);
   --border-button-dark__hover: rgba(255, 255, 255, 1);
 
-  /* link */
+  /* quick start backgrounds */
+  --linear-bg-purple: linear-gradient(297deg, #8EC5FC 8.25%, #E0C3FC 91.76%);
+  --linear-bg-orange: linear-gradient(207deg, #FCB69F 6.91%, #FFECD2 92.45%);
+  --linear-bg-blue: linear-gradient(0deg, #C2E9FB -16.6%, #A1C4FD 106.15%);
 }
