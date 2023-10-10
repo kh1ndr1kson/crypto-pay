@@ -22,4 +22,7 @@
   --linear-bg-purple: linear-gradient(297deg, #8EC5FC 8.25%, #E0C3FC 91.76%);
   --linear-bg-orange: linear-gradient(207deg, #FCB69F 6.91%, #FFECD2 92.45%);
   --linear-bg-blue: linear-gradient(0deg, #C2E9FB -16.6%, #A1C4FD 106.15%);
+
+  /* crypto api */
+  --gradient-bg-blue: linear-gradient(233deg, #9FCCFA -20.48%, #0974F1 97.38%);
 }
