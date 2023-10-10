@@ -126,6 +126,12 @@ header {
     justify-content: flex-end;
     gap: 8px;
     width: 250px;
+
+    & .icon-button {
+      width: 40px;
+      height: 40px;
+      background: url(../assets/mode/sun-dark.svg) no-repeat center;
+    }
   }
 }
 
@@ -609,6 +615,10 @@ main {
             color: #a0a0a0;
             top: 15px;
             right: 15px;
+          }
+
+          & .telegram__logo {
+            align-self: center;
           }
 
           & p {
@@ -1209,4 +1219,717 @@ footer {
   66.666% { fill: none }
   83.333% { fill: #FFFFFF }
   100% { fill: #FFFFFF }
+}
+
+/*
+ * Mobile styles
+ */
+@media screen and (max-width: 1199px) {
+  .br-unset {
+    display: none;
+  }
+
+  header {
+    justify-content: space-between;
+    width: 100%;
+    height: 64px;
+    margin: 44px 20px 20px 20px;
+    box-sizing: border-box;
+
+    & .logo {
+      width: auto;
+      margin: auto 0;
+
+      & img {
+        width: 46px;
+        height: 46px;
+      }
+    }
+
+    & .bullets {
+      display: none;
+    }
+
+    & .mode {
+      width: auto;
+
+      & .icon-button {
+        width: 40px;
+        height: 40px;
+        background: url(../assets/mode/sun-dark__mobile.svg) no-repeat center;
+      }
+    }
+  }
+
+  main {
+    .hero-block {
+      padding: 20px 20px 0 20px;
+      flex-direction: column;
+      gap: 52px;
+
+      .description {
+        gap: 24px;
+
+        & h1.title {
+          text-align: center;
+          font-size: 46px;
+          line-height: 110%;
+          letter-spacing: -1.38px;
+        }
+
+        & p {
+          text-align: center;
+          font-size: 18px;
+          line-height: 120%;
+        }
+
+        & button {
+          margin: -12px auto 0 auto;
+        }
+
+        .bots {
+          margin-top: 0;
+
+          & .images {
+            margin-left: 64px;
+            margin-bottom: 12px;
+
+            & img {
+              width: 59px;
+              height: 59px;
+              margin-left: -20px;
+              border: 2px solid var(--text-light);
+            }
+          }
+        }
+      }
+
+      .phone {
+        & img {
+          margin: 0;
+        }
+      }
+    }
+
+    .use-cases {
+      padding: 32px 20px;
+      margin-bottom: 80px;
+
+      .container {
+        max-width: 375px;
+        flex-direction: column;
+
+        #carousel {
+          width: 100%;
+
+          & .items {
+            height: 606px;
+
+            & .item {
+              flex-direction: column;
+              gap: 0;
+
+              & .image {
+                width: 335px;
+                height: 335px;
+
+                & > img {
+                  object-fit: contain;
+                  width: 100%;
+                }
+              }
+
+              & .description {
+                margin-top: 32px;
+                margin-bottom: 32px;
+                gap: 24px;
+
+                & h2 {
+                  text-align: center;
+                  font-size: 32px;
+                  line-height: 110%;
+                  letter-spacing: -1.5px;
+                }
+
+                & p {
+                  height: 66px;
+                  text-align: center;
+                  font-size: 18px;
+                  font-weight: 300;
+                  line-height: 120%;
+                }
+
+                & button {
+                  width: 100%;
+                  margin-top: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .features {
+      padding: 0 20px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas:
+      "currency"
+      "commission"
+      "exchange"
+      "stat"
+      "verification"
+      "anonymous";
+      grid-gap: 20px;
+
+      & .card {
+        padding: 32px;
+        width: 335px;
+        border-radius: 24px;
+        box-sizing: border-box;
+      }
+
+      & > .currency {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+
+        & h3 {
+          order: 1;
+          font-size: 28px;
+          line-height: 110%;
+          letter-spacing: -0.84px;
+          margin-bottom: 16px;
+        }
+
+        & p {
+          order: 2;
+          font-size: 18px;
+          line-height: 120%;
+        }
+
+        & .coins {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          gap: 12px;
+          order: 0;
+          margin-top: 0;
+          margin-bottom: 24px;
+
+          & > .coin {
+            height: 56px;
+
+            & img {
+              width: 56px;
+              height: 56px;
+              margin-bottom: 0;
+            }
+
+            & span {
+              display: none;
+            }
+
+            &:nth-child(5) {
+              margin-left: 11px;
+            }
+          }
+        }
+      }
+
+      & > .commission {
+        margin-bottom: 24px;
+
+        & .button-click {
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: -70%;
+            right: -15px;
+            background: url(../assets/features/commission/cursor.svg) no-repeat;
+            width: 45.802px;
+            height: 48.738px;
+            transition: .5s;
+            z-index: 1;
+          }
+        }
+
+        & h3 {
+          font-size: 28px;
+          line-height: 110%;
+          letter-spacing: -0.84px;
+          margin-bottom: 16px;
+        }
+
+        & p {
+          font-size: 18px;
+          line-height: 120%;
+        }
+      }
+
+      & > .exchange {
+        margin-bottom: 24px;
+
+        & .swap {
+          height: 80px;
+          margin-bottom: 24px;
+
+          & svg, #svgDollar {
+            width: 88px;
+            height: 88px;
+          }
+
+          & #svgUsdt {
+            left: -8px;
+          }
+
+          & #svgBtc {
+            left: 16px;
+          }
+
+          & #svgTon {
+            left: 40px;
+          }
+
+          & #svgDollar {
+            width: 84px;
+            height: 84px;
+            top: -4px;
+            right: -20px;
+          }
+
+          & #svgBtn {
+            width: 29px;
+            height: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 48.5px;
+          }
+        }
+
+        & h3 {
+          font-size: 28px;
+          line-height: 110%;
+          letter-spacing: -0.84px;
+          margin-bottom: 16px;
+        }
+
+        & p {
+          font-size: 18px;
+          line-height: 120%;
+        }
+      }
+
+      & > .stat {
+
+        & .bg-message {
+          height: 281px;
+          margin-bottom: 24px;
+
+          & .message-content {
+            top: 24px;
+            width: 231px;
+            height: 119px;
+            padding: 5px 8px;
+            border-radius: 9px 9px 4px 4px;
+
+            &::before {
+              content: '21:30';
+              font-size: 8px;
+              position: absolute;
+              color: #a0a0a0;
+              bottom: 5px;
+              right: 8px;
+            }
+
+            & > p {
+              font-size: 10px;
+              line-height: 12px;
+
+              &:nth-child(2) {
+                margin: 12px 0;
+              }
+
+              &:last-child {
+                margin-top: 12px;
+              }
+
+              & > span {
+                font-size: 10px;
+                line-height: 12px;
+                letter-spacing: -0.3px;
+              }
+            }
+          }
+
+          & .actions {
+            bottom: 24px;
+            width: 231px;
+            gap: 2.5px;
+
+            & .action {
+              padding: 6.75px 0;
+              width: calc(50% - (2.5px / 2));
+              border-radius: 4px;
+              font-size: 10px;
+            }
+
+            & .action-full {
+              width: 100%;
+            }
+          }
+        }
+
+        & h3 {
+          font-size: 28px;
+          line-height: 110%;
+          letter-spacing: -0.84px;
+          margin-bottom: 16px;
+        }
+
+        & p {
+          font-size: 18px;
+          line-height: 120%;
+        }
+      }
+
+      & > .verification {
+
+        & .phone-down {
+          margin-top: -36px;
+          margin-bottom: 24px;
+          width: 252px;
+          height: 202px;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          & .message-content__v {
+            left: 20px;
+            top: 40px;
+            width: 196px;
+            padding: 7px 8px;
+            border-radius: 12.8px;
+
+            &::before {
+              content: 'now';
+              font-size: 7px;
+              top: 8px;
+              right: 10px;
+            }
+
+            & .telegram__logo {
+              width: 25.087px;
+              height: 24.019px;
+            }
+
+            & p {
+              font-size: 9.2px;
+              line-height: 110%;
+              letter-spacing: -0.276px;
+              width: 90%;
+
+              & > span {
+                font-size: 9.2px;
+                line-height: 110%;
+                letter-spacing: -0.276px;
+              }
+
+              &:last-child {
+                margin-top: 9.3px;
+              }
+
+              & > img:first-child {
+                margin-right: 1.5px;
+              }
+
+              & > img:last-child {
+                margin-left: 1.5px;
+              }
+            }
+
+            & .message-text__v {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              gap: 4px;
+
+              & img {
+                width: 11px;
+                height: 11px;
+                margin-bottom: -2px;
+              }
+            }
+          }
+        }
+
+        & h3 {
+          font-size: 28px;
+          line-height: 110%;
+          letter-spacing: -0.84px;
+          margin-bottom: 16px;
+        }
+
+        & p {
+          font-size: 18px;
+          line-height: 120%;
+        }
+      }
+
+      & > .anonymous {
+
+        & h3 {
+          font-size: 28px;
+          letter-spacing: -0.84px;
+          margin-top: 150px;
+          margin-bottom: 16px;
+        }
+
+        & p {
+          font-size: 18px;
+          line-height: 120%;
+        }
+
+        & .message-content__a {
+          top: 32px;
+          width: 270px;
+          height: 126px;
+          border-radius: 16px;
+          padding: 22.5px;
+
+          & p {
+            font-size: 11.5px;
+            line-height: 13.6px;
+            font-weight: 400;
+            letter-spacing: -0.34px;
+
+            &:first-child {
+              margin-bottom: 15px;
+            }
+          }
+
+          & span {
+            font-size: 11.5px;
+            line-height: 13.6px;
+            letter-spacing: -0.5px;
+          }
+
+          & > .message-text__a {
+            left: 22.5px;
+            top: 22.5px;
+            padding: 6px 9px;
+            width: 208px;
+            border-radius: 10px;
+
+            &::before {
+              content: url(../assets/features/anonymous/tail.svg);
+              position: absolute;
+              bottom: -4px;
+              left: -5.43px;
+              z-index: -1;
+            }
+
+            &::after {
+              content: '21:25';
+              font-size: 8.8px;
+              bottom: 6px;
+              right: 9px;
+            }
+
+            & img {
+              width: 11.6px;
+              height: 11.6px;
+              margin-bottom: -1.5px;
+            }
+
+            & .hard-emoji {
+              position: absolute;
+              left: 33px;
+              bottom: 9px;
+            }
+
+            & .hands-emoji {
+              position: absolute;
+              left: 38px;
+              bottom: 9px;
+            }
+
+            & .party-emoji {
+              position: absolute;
+              left: 66px;
+              bottom: 9px;
+            }
+          }
+        }
+      }
+    }
+
+    .quick-start {
+      margin-top: 80px;
+
+      & .container {
+        padding: 32px 20px;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        & h2 {
+          font-size: 32px;
+          line-height: 110%;
+          letter-spacing: -0.96px;
+        }
+
+        & .steps {
+          flex-wrap: wrap;
+          gap: 24px;
+          margin-top: 24px;
+
+          & .step {
+            flex-direction: column;
+            gap: 16px;
+
+            & .description {
+              position: relative;
+              width: calc(335px - 52px);
+              margin-left: 52px;
+
+              & h3 {
+                font-size: 28px;
+                line-height: 110%;
+                letter-spacing: -0.84px;
+                margin-top: 0;
+              }
+
+              & p {
+                font-size: 18px;
+                line-height: 120%;
+              }
+
+              & ul {
+                & li {
+                  font-size: 18px;
+                  line-height: 120%;
+                }
+              }
+            }
+
+            & .image {
+              border-radius: 24px;
+              width: 335px;
+              height: 278px;
+            }
+
+            &:nth-child(1) > .description { order: 1 }
+            &:nth-child(1) > .image {
+              order: 0;
+
+              & > img {
+                width: 283px;
+              }
+            }
+
+            &:nth-child(2) > .description { order: 1 }
+            &:nth-child(2) > .image {
+              order: 0;
+
+              & > img {
+                width: 300px;
+              }
+            }
+
+            &:nth-child(3) > .description { order: 1 }
+            &:nth-child(3) > .image {
+              order: 0;
+
+              & > img {
+                width: 296px;
+              }
+            }
+
+            & > .description::before {
+              content: '1';
+              position: absolute;
+              top: 0;
+              left: -52px;
+              font-size: 24px;
+              line-height: 110%;
+              letter-spacing: -0.72px;
+              width: 36px;
+              height: 36px;
+            }
+          }
+        }
+      }
+    }
+
+    .crypto-api {
+      margin: 80px 20px;
+      width: 335px;
+      height: 514px;
+      padding: 291px 32px 28px 32px;
+      background-image: url(../assets/crypto-api/bg__mobile.webp);
+      border-radius: 24px;
+      box-sizing: border-box;
+
+      & .description {
+        padding: 0;
+        width: 271px;
+
+        & h2 {
+          font-size: 32px;
+          line-height: 110%;
+          letter-spacing: -0.96px;
+        }
+
+        & p {
+          font-size: 18px;
+          line-height: 120%;
+          margin: 24px 0;
+        }
+
+        & button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @keyframes cursor {
+    25% {
+      bottom: -40%;
+      right: 10px;
+    }
+    65% {
+      bottom: -40%;
+      right: 10px;
+    }
+    90% {
+      bottom: -70%;
+      right: -15px;
+    }
+  }
+
+  @keyframes exUsdt {
+    16.666% { left: 16px; z-index: 3; }
+    33.333% { left: 16px; z-index: 3; }
+    49.999% { left: 40px; z-index: 4; }
+    66.666% { left: 40px; z-index: 4; }
+    83.333% { left: -8px; z-index: 1; }
+    100% { left: -8px; z-index: 1; }
+  }
+
+  @keyframes exBtc {
+    16.666% { left: 40px; z-index: 4; }
+    33.333% { left: 40px; z-index: 4; }
+    49.999% { left: -8px; z-index: 1; }
+    66.666% { left: -8px; z-index: 1; }
+    83.333% { left: 16px; z-index: 3; }
+    100% { left: 16px; z-index: 3; }
+  }
+
+  @keyframes exTon {
+    16.666% { left: -8px; z-index: 1; }
+    33.333% { left: -8px; z-index: 1; }
+    49.999% { left: 16px; z-index: 3; }
+    66.666% { left: 16px; z-index: 3; }
+    83.333% { left: 40px; z-index: 4; }
+    100% { left: 40px; z-index: 4; }
+  }
 }

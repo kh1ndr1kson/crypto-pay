@@ -39,3 +39,34 @@
     }
   }
 }
+
+/*
+ * Mobile styles
+ */
+@media screen and (max-width: 1199px) {
+  .slider {
+    position: relative;
+    transform: unset;
+    padding-top: 32px;
+
+    & > form {
+      width: 335px;
+      height: 16px;
+      align-items: center;
+
+      & label {
+        display: flex;
+        width: 82px;
+        height: 4px;
+      }
+
+      & input[type="radio"] {
+        display: none;
+
+        &:checked + label {
+          background: var(--text-blue);
+        }
+      }
+    }
+  }
+}
