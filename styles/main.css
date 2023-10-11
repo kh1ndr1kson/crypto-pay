@@ -79,6 +79,11 @@
   font-family: 'Inter', sans-serif;
 }
 
+body {
+  background: var(--bg-app);
+  transition: .1s;
+}
+
 header {
   position: relative;
   display: flex;
@@ -111,6 +116,7 @@ header {
         font-style: normal;
         font-weight: 400;
         line-height: 120%;
+        color: var(--text-dark);
 
         & > a {
           text-decoration: none;
@@ -130,7 +136,7 @@ header {
     & .icon-button {
       width: 40px;
       height: 40px;
-      background: url(../assets/mode/sun-dark.svg) no-repeat center;
+      background: var(--icon-btn);
     }
   }
 }
@@ -185,7 +191,7 @@ main {
             width: 88px;
             height: 88px;
             margin-left: -36px;
-            border: 4px solid var(--text-light);
+            border: 4px solid var(--bg-app);
             border-radius: 50%;
           }
         }
@@ -336,39 +342,55 @@ main {
     }
 
     & > .commission {
+      position: relative;
       grid-area: commission;
       width: 488px;
       box-sizing: border-box;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 48%;
+        right: 80px;
+        background: var(--cursor-image);
+        width: 45.802px;
+        height: 48.738px;
+        transition: .5s;
+        z-index: 1;
+      }
 
       & .button-click {
         position: relative;
         display: flex;
         justify-content: center;
-        margin-top: 37px;
-        margin-bottom: 53px;
+        align-items: center;
+        gap: 5px;
+        width: 221px;
+        height: 62px;
+        margin: 37px auto 53px auto;
+        border-radius: 17px;
+        background: var(--bg-btn);
+        transition: .25s;
 
-        &::before {
-          content: '';
-          position: absolute;
-          bottom: -70%;
-          right: 15px;
-          background: url(../assets/features/commission/cursor.svg) no-repeat;
-          width: 45.802px;
-          height: 48.738px;
-          transition: .5s;
-          z-index: 1;
+        & > img {
+          width: 21px;
+          height: 21px;
+        }
+
+        & > span {
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%;
+          color: var(--text-dark);
         }
       }
 
-      & .button-click > img {
-        border-radius: 17px;
-      }
-
-      &:hover .button-click::before {
+      &:hover::before {
         animation: cursor 2s ease-in-out;
       }
 
-      &:hover .button-click > img {
+      &:hover .button-click {
         animation: button 2s ease-in-out;
       }
     }
@@ -399,7 +421,7 @@ main {
           border-radius: 16px 16px 7px 7px;
           transition: opacity, 0.25s ease-in-out;
           opacity: 1;
-          color: var(--text-dark);
+          color: #0D0D12; /* no theme */
           box-sizing: border-box;
 
           &::before {
@@ -415,6 +437,7 @@ main {
             font-family: 'SF-Pro', sans-serif;
             font-style: normal;
             font-weight: 400;
+            color: rgba(17, 17, 17, 0.8);
 
             &:nth-child(2) {
               margin: 22px 0;
@@ -586,7 +609,7 @@ main {
         position: relative;
         width: 462px;
         height: 350px;
-        background-image: url(../assets/features/verification/phone-down.webp);
+        background-image: var(--phone-down);
         background-position: center;
         background-size: cover;
         align-self: center;
@@ -605,7 +628,7 @@ main {
           box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.02);
           transition: transform .6s ease-in-out, scale .5s ease-in-out,
           opacity .5s ease-in-out;
-          background: linear-gradient(98deg, #e8f2f9 15.04%, #e8f2f9 52.22%, #e9f1fa 90.93%);
+          background: var(--bg-message);
           z-index: 2;
 
           &::before {
@@ -708,6 +731,7 @@ main {
           font-weight: 300;
           line-height: 21px;
           letter-spacing: -0.534px;
+          color: rgba(17, 17, 17, .8);
 
           &:first-child {
             margin-bottom: 20px;
@@ -816,6 +840,7 @@ main {
         font-weight: 600;
         line-height: 110%;
         letter-spacing: -1.68px;
+        color: var(--text-dark);
 
         & > span {
           color: var(--text-blue)
@@ -851,9 +876,9 @@ main {
               width: 64px;
               height: 64px;
               border-radius: 32px;
-              background: linear-gradient(220deg, #010417 10.26%, #2b333f 84.25%);
-              box-shadow: 0 0 8px 0 rgba(182, 186, 191, 0.04);
-              color: var(--text-light);
+              background: var(--bg-step-number);
+              box-shadow: var(--bs-step-number);
+              color: var(--text-step-number);
             }
 
             & h3 {
@@ -863,6 +888,7 @@ main {
               line-height: 110%;
               letter-spacing: -1.26px;
               margin: 20px 0;
+              color: var(--text-dark);
             }
 
             & p {
@@ -871,6 +897,7 @@ main {
               font-weight: 300;
               line-height: 120%;
               margin-bottom: 20px;
+              color: var(--text-dark);
             }
 
             & ul {
@@ -884,6 +911,7 @@ main {
                 font-style: normal;
                 font-weight: 300;
                 line-height: 120%;
+                color: var(--text-dark);
               }
 
               &.ul-numbers > li {
@@ -991,7 +1019,7 @@ main {
   .community {
     position: relative;
     border-radius: 0 0 40px 40px;
-    background: var(--text-light);
+    background: var(--bg-app);
 
     &::before {
       content: '';
@@ -1028,6 +1056,7 @@ main {
           font-weight: 600;
           line-height: 110%;
           letter-spacing: -1.68px;
+          color: var(--text-dark);
         }
 
         & p {
@@ -1035,6 +1064,7 @@ main {
           font-style: normal;
           font-weight: 300;
           line-height: 120%;
+          color: var(--text-dark);
         }
       }
 
@@ -1064,6 +1094,7 @@ main {
             margin-top: 16px;
             width: 100%;
             text-align: center;
+            color: var(--text-dark);
           }
         }
       }
@@ -1132,41 +1163,43 @@ footer {
   }
 }
 
+.svg-border {
+  stroke: var(--bg-light);
+  stroke-width: 4px
+}
+
 /* keyframes */
 @keyframes cursor {
   25% {
-    bottom: -40%;
-    right: 50px;
+    bottom: 52%;
+    right: 115px;
   }
   65% {
-    bottom: -40%;
-    right: 50px;
+    bottom: 52%;
+    right: 115px;
   }
   90% {
-    bottom: -70%;
-    right: 15px;
+    bottom: 48%;
+    right: 80px;
   }
 }
 
 @keyframes button {
   25% {
     transform: scale(1);
-    background: unset;
   }
   40% {
+    background: var(--bg-btn__clicked);
     transform: scale(1.1);
-    background: rgba(217, 228, 242, .5);
   }
   65% {
     transform: scale(1);
   }
   75% {
     transform: scale(1);
-    background: unset;
   }
   100% {
     transform: scale(1);
-    background: unset;
   }
 }
 
@@ -1257,7 +1290,7 @@ footer {
       & .icon-button {
         width: 40px;
         height: 40px;
-        background: url(../assets/mode/sun-dark__mobile.svg) no-repeat center;
+        background: var(--icon-btn__mobile);
       }
     }
   }
@@ -1299,7 +1332,7 @@ footer {
               width: 59px;
               height: 59px;
               margin-left: -20px;
-              border: 2px solid var(--text-light);
+              border: 2px solid var(--bg-app);
             }
           }
         }
@@ -1440,18 +1473,19 @@ footer {
       & > .commission {
         margin-bottom: 24px;
 
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 48%;
+          right: 10px;
+          background: var(--cursor-image);
+          width: 45.802px;
+          height: 48.738px;
+          transition: .5s;
+          z-index: 1;
+        }
+
         & .button-click {
-          &::before {
-            content: '';
-            position: absolute;
-            bottom: -70%;
-            right: -15px;
-            background: url(../assets/features/commission/cursor.svg) no-repeat;
-            width: 45.802px;
-            height: 48.738px;
-            transition: .5s;
-            z-index: 1;
-          }
         }
 
         & h3 {
@@ -1985,16 +2019,16 @@ footer {
 
   @keyframes cursor {
     25% {
-      bottom: -40%;
-      right: 10px;
+      bottom: 52%;
+      right: 45px;
     }
     65% {
-      bottom: -40%;
-      right: 10px;
+      bottom: 52%;
+      right: 45px;
     }
     90% {
-      bottom: -70%;
-      right: -15px;
+      bottom: 48%;
+      right: 10px;
     }
   }
 

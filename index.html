@@ -27,7 +27,7 @@
       </ul>
     </nav>
     <div class="mode">
-      <button class="icon-button"></button>
+      <button id="modeHandler" class="icon-button" value="light"></button>
       <button class="button secondary">Get Started</button>
     </div>
   </header>
@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="phone">
-        <img src="./assets/hero-block/phone.webp" alt="Telegram Crypto Bot">
+        <img id="iphone" src="./assets/hero-block/phone.webp" alt="Telegram Crypto Bot">
       </div>
     </div>
 
@@ -152,7 +152,8 @@
       </div>
       <div class="card commission">
         <div class="button-click">
-          <img src="./assets/features/commission/button.svg" alt="Button">
+          <img src="./assets/features/anonymous/tree-emoji.svg" alt="">
+          <span>Create App</span>
         </div>
         <h3>One click to start</h3>
         <p>Open
@@ -195,7 +196,7 @@
             <rect x="0.714355" width="96" height="96" rx="48" fill="url(#paint0_linear_955_3970)"/>
             <path id="svgUsdtTextUp" d="M71.5022 22.6909H25.3081V33.8431H42.8291V50.2347H53.9812V33.8431H71.5022V22.6909Z" fill="white"/>
             <path id="svgUsdtTextDown" d="M48.5113 51.9808C34.0174 51.9808 22.2666 49.6869 22.2666 46.8569C22.2666 44.0274 34.0169 41.7331 48.5113 41.7331C63.0051 41.7331 74.7554 44.0274 74.7554 46.8569C74.7554 49.6869 63.0051 51.9808 48.5113 51.9808ZM77.9795 47.7111C77.9795 44.0621 64.7863 41.1042 48.5113 41.1042C32.2367 41.1042 19.0425 44.0621 19.0425 47.7111C19.0425 50.9246 29.2731 53.6019 42.8298 54.1951V77.7258H53.981V54.2044C67.6421 53.6297 77.9795 50.9412 77.9795 47.7111Z" fill="white"/>
-            <rect x="-1.3" y="-2" width="100" height="100" rx="50" stroke="#F1F5F9" stroke-width="4"/>
+            <rect class="svg-border" x="-1.3" y="-2" width="100" height="100" rx="50"/>
             <defs>
               <linearGradient id="paint0_linear_955_3970" x1="9.87799" y1="131.782" x2="57.4416" y2="30.5454" gradientUnits="userSpaceOnUse">
                 <stop stop-color="#8DDAD5"/>
@@ -208,7 +209,7 @@
           <svg id="svgBtc" width="120" height="120" viewBox="-4 -4 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="0.143066" width="96" height="96" rx="48" fill="url(#paint0_linear_955_3980)"/>
             <path id="svgBtcText" d="M71.2642 41.0905C72.3168 34.0423 66.9489 30.2551 59.6033 27.7264L61.9828 18.1746L56.1718 16.7269L53.8558 26.0239C52.33 25.6438 50.7601 25.2832 49.2015 24.9299L51.5329 15.5713L45.7219 14.1236L43.3403 23.6663C42.0757 23.3774 40.8317 23.0937 39.6267 22.7936L39.6339 22.7648L31.6196 20.7639L30.0728 26.9728C30.0728 26.9728 34.3868 27.9602 34.2933 28.0199C36.6498 28.6069 37.0746 30.1626 37.0027 31.398L34.2923 42.2781C34.4568 42.319 34.6645 42.3795 34.8948 42.4718L34.282 42.3192L30.4807 57.5609C30.1935 58.2754 29.4635 59.3469 27.8175 58.9412C27.8751 59.0254 23.5939 57.889 23.5939 57.889L20.7092 64.542L28.2763 66.4271C29.6828 66.7775 31.0625 67.1474 32.4176 67.4937L30.0155 77.1535L35.8224 78.6002L38.203 69.0442C39.7864 69.4735 41.3255 69.8701 42.8348 70.2461L40.4614 79.7558L46.2724 81.2034L48.6734 71.5652C58.5841 73.4402 66.0451 72.683 69.1786 63.7164C71.7062 56.4984 69.0536 52.3309 63.8377 49.6166C67.6402 48.7472 70.5028 46.2505 71.2642 41.0905ZM57.9853 59.7139C56.1876 66.9302 44.0333 63.0333 40.0893 62.0508L43.2781 49.2505C47.22 50.2412 59.8599 52.1891 57.9853 59.7139ZM59.7772 40.9845C58.1413 47.5512 48.0186 44.2128 44.7358 43.3993L47.6265 31.7956C50.9124 32.6142 61.4868 34.1392 59.7772 40.9845Z" fill="white"/>
-            <rect x="-1.88" y="-2" width="100" height="100" rx="50" stroke="#F1F5F9" stroke-width="4"/>
+            <rect class="svg-border" x="-1.88" y="-2" width="100" height="100" rx="50"/>
             <defs>
               <linearGradient id="paint0_linear_955_3980" x1="-16.4388" y1="163.2" x2="78.6885" y2="3.29727e-06" gradientUnits="userSpaceOnUse">
                 <stop stop-color="#FF930F"/>
@@ -222,7 +223,7 @@
             <g filter="url(#filter0_dd_955_4022)">
               <rect x="11.9961" y="12" width="96" height="96" rx="48" fill="url(#paint0_linear_955_4022)"/>
               <path id="svgTonText" d="M76.3888 38.79H43.6087C37.5816 38.79 33.7617 45.2915 36.7937 50.5473L57.0244 85.6127C58.3445 87.9023 61.6529 87.9023 62.9731 85.6127L83.2078 50.5473C86.236 45.2999 82.4158 38.79 76.3929 38.79H76.3888ZM57.0079 75.0971L52.602 66.57L41.9711 47.5564C41.2697 46.3394 42.136 44.7799 43.6046 44.7799H57.0038V75.1012L57.0079 75.0971ZM78.0182 47.5523L67.3913 66.5742L62.9855 75.0971V44.7758H76.3847C77.8533 44.7758 78.7195 46.3353 78.0182 47.5523Z" fill="white"/>
-              <rect x="9.99609" y="10" width="100" height="100" rx="50" stroke="#F1F5F9" stroke-width="4"/>
+              <rect class="svg-border" x="9.99609" y="10" width="100" height="100" rx="50"/>
             </g>
             <defs>
               <filter id="filter0_dd_955_4022" x="-0.00390625" y="0" width="120" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -488,5 +489,6 @@
   <script src="./scripts/main.js"></script>
   <script src="./scripts/slider.js"></script>
   <script src="./scripts/animations.js"></script>
+  <script src="./scripts/theme.js"></script>
 </body>
 </html>
