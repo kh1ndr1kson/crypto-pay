@@ -5,7 +5,7 @@ for (let anchor of anchors) {
     e.preventDefault()
 
     const blockID = anchor.getAttribute('href').substr(1)
-    const blockValue = blockID === 'quickStart' ? 'start' : 'center'
+    const blockValue = blockID === 'useCases' ? 'center' : 'start'
 
     document.getElementById(blockID).scrollIntoView({
       behavior: 'smooth',

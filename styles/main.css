@@ -1345,8 +1345,14 @@ footer {
           line-height: 120%;
         }
 
-        & button {
-          margin: -12px auto 0 auto;
+        & a {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+
+          & button {
+            margin: -12px auto 0 auto;
+          }
         }
 
         .bots {
@@ -1422,9 +1428,13 @@ footer {
                   line-height: 120%;
                 }
 
-                & button {
+                & a {
                   width: 100%;
-                  margin-top: 0;
+
+                  & button {
+                    width: 100%;
+                    margin-top: 0;
+                  }
                 }
               }
             }
