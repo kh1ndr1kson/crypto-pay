@@ -10,10 +10,8 @@ function setDarkTheme () {
 
   /* feat DOM elements */
   iphone.setAttribute('src', './assets/hero-block/phone__dark.webp')
-  document.querySelectorAll('.button.secondary').forEach((el) => {
-    el.classList.remove('secondary')
-    el.classList.add('dark')
-  })
+  document.getElementById('getStarted').classList.remove('secondary')
+  document.getElementById('getStarted').classList.add('dark')
 }
 
 function setLightTheme () {
@@ -25,10 +23,9 @@ function setLightTheme () {
 
   /* feat DOM elements */
   iphone.setAttribute('src', './assets/hero-block/phone.webp')
-  document.querySelectorAll('.button.dark').forEach((el) => {
-    el.classList.remove('dark')
-    el.classList.add('secondary')
-  })
+
+  document.getElementById('getStarted').classList.remove('dark')
+  document.getElementById('getStarted').classList.add('secondary')
 }
 
 if (localStorage.getItem('theme') === null) {
